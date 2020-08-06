@@ -1,4 +1,4 @@
-FROM ros:kinetic-robot-xenial
+FROM ros:kinetic-perception-xenial
 
 ENV UBUNTU_VERSION=xenial
 
@@ -14,7 +14,12 @@ ARG myuser
 RUN useradd -ms /bin/bash $myuser
 RUN usermod -a -G dialout $myuser
 
-RUN apt install git python-serial ros-${ROS_VERSION}-serial g++ \
-ros-${ROS_VERSION}-turtlebot-rviz-launchers ros-${ROS_VERSION}-teleop-twist-keyboard \
-ros-${ROS_VERSION}-move-base-msgs libghc-sdl-image-dev libsdl-imagK2.2-dev \
-ros-${ROS_VERSION}-navigation ros-${ROS_VERSION}-slam-gmapping ros-${ROS_VERSION}-teb-local-planner -y
+RUN apt install git python-serial g++ -y
+RUN apt install ros-${ROS_VERSION}-serial -y
+RUN apt install ros-${ROS_VERSION}-teleop-twist-keyboard -y
+RUN apt install ros-${ROS_VERSION}-move-base-msgs -y
+RUN apt install libghc-sdl-image-dev -y
+RUN apt install libsdl-imag* -y
+RUN apt install ros-${ROS_VERSION}-teb-local-planner -y
+
+RUN apt install usbutils -y
