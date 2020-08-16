@@ -18,7 +18,6 @@ run-root: build
 	   --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
 	   -e XAUTHORITY=$(XAUTH) \
 	   --volume="$(XAUTH):$(XAUTH)" \
-	   --runtime=nvidia \
 	   -e HOME=${HOME} \
 	   -v "${HOME}/Workspace:${HOME}/Workspace/" \
 	   -v /etc/group:/etc/group:ro \
@@ -40,7 +39,6 @@ run:
 	   --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
 	   -e XAUTHORITY=$(XAUTH) \
 	   --volume="$(XAUTH):$(XAUTH)" \
-	   --runtime=nvidia \
 	   -e HOME=${HOME} \
 	   -v "${HOME}/Workspace:${HOME}/Workspace/" \
 	   -u $(shell id -u ${USER} ):$(shell id -g ${USER}) \

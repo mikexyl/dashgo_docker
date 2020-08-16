@@ -23,3 +23,4 @@ RUN apt install libsdl-imag* -y
 RUN apt install ros-${ROS_VERSION}-teb-local-planner -y
 
 RUN apt install usbutils -y
+RUN apt install ros-${ROS_VERSION}-yujin-ocs -y
