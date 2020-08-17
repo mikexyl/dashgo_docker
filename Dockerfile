@@ -24,3 +24,15 @@ RUN apt install ros-${ROS_VERSION}-teb-local-planner -y
 
 RUN apt install usbutils -y
 RUN apt install ros-${ROS_VERSION}-yujin-ocs -y
+
+RUN apt install npm -y
+RUN npm install vue
+
+RUN apt install python-pip -y
+#RUN pip install http
+
+RUN apt install ros-${ROS_VERSION}-rosbridge-suite -y
+
+COPY dashgo_entrypoint.sh /
+COPY dashgo_startup.sh /
+
